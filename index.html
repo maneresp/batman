@@ -1,1 +1,85 @@
+        <!DOCTYPE html>
+        <html lang="ar">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>safe</title>
+            <style>
+                body {
+                    background-color: #121212;
+                    color: #fff;
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    text-align: center;
+                }
+                .container {
+                    max-width: 90%;
+                    padding: 20px;
+                }
+                input[type="text"] {
+                    padding: 10px;
+                    width: 80%;
+                    max-width: 300px;
+                    margin-bottom: 20px;
+                    border: 1px solid #444;
+                    background-color: #333;
+                    color: #fff;
+                }
+                button {
+                    padding: 10px 20px;
+                    border: none;
+                    background-color: #f00;
+                    color: #fff;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #d00;
+                }
+                iframe {
+                    width: 100%;
+                    height: 300px;
+                    border: none;
+                    margin-top: 20px;
+                }
+            </style>
 
+            <!-- كود إعلانات batman التلقائية -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6685697097497252"
+             crossorigin="anonymous"></script>
+        </head>
+        <body>
+            <div class="container">
+                <h1>منصة باتمان</h1>
+                <p>أدخل كود الفيديو هنا:</p>
+                <input type="text" id="videoCode" placeholder="أدخل الكود هنا">
+              
+             
+             <button onclick="loadVideo()">تشغيل المحاضرة</button>
+
+<div id="videoContainer"></div><p>قناة منصة باتمان على تيليجرام <a href="https://t.me/B6TMAN" target="_blank">اضغط هنا لدخول لقناه منصة باتمان</a></p>
+            
+             <div id="videoContainer"></div>
+            </div>
+
+            <script>
+                function loadVideo() {
+                    const videoCode = document.getElementById('videoCode').value.trim();
+                    if (!videoCode) {
+                        alert("يرجى إدخال كود الفيديو");
+                        return;
+                    }
+
+                    const iframe = document.createElement("iframe");
+                    iframe.src = `https://iframe.mediadelivery.net/embed/215061/${videoCode}?autoplay=true&loop=false&muted=false&preload=true&responsive=true`;
+                    iframe.allow = "autoplay; fullscreen";
+                    document.getElementById("videoContainer").innerHTML = "";
+                    document.getElementById("videoContainer").appendChild(iframe);
+                }
+            </script>
+        </body>
+        </html>
